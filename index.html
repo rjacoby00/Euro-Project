@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VR Museum of European History</title>
+    <script src="https://aframe.io/releases/0.9.1/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@5/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-layout-component@5.3.0/dist/aframe-layout-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.js"></script>
+
+</head>
+<body>
+    <a-scene>
+        <a-assests>
+            <img id="lady_liberty" src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Eug%C3%A8ne_Delacroix_-_Le_28_Juillet._La_Libert%C3%A9_guidant_le_peuple.jpg">
+        </a-assests>
+
+        <a-plane height="20" width="28" position="0 0 0" color="#333" rotation="-90 0 0"></a-plane>
+        
+        <a-plane height="5" width="10" position="1 2.5 -14" color="#888" rotation="0 0 0"></a-plane>
+        <a-plane height="5" width="28" position="-8 2.5 6" color="#888" rotation="0 180 0"></a-plane>
+        <a-plane height="5" width="20" position="6 2.5 -4" color="#888" rotation="0 -90 0"></a-plane>
+        <a-plane height="5" width="10" position="-4 2.5 -9" color="#888" rotation="0 90 0"></a-plane>
+        <a-plane height="5" width="18" position="-13 2.5 -4" color="#888" rotation="0 0 0"></a-plane>
+        <a-plane height="5" width="10" position="-22 2.5 1" color="#888" rotation="0 90 0"></a-plane>
+
+        <a-box color="#500" depth="1" hight="1" width="1" position="-4 0 -4"></a-box>
+        <a-box color="#500" depth="1" hight="1" width="1" position="-4 0 -14"></a-box>
+        <a-box color="#500" depth="1" hight="1" width="1" position="6 0 -14"></a-box>
+        <a-box color="#500" depth="1" hight="1" width="1" position="6 0 6"></a-box>
+        <a-box color="#500" depth="1" hight="1" width="1" position="-22 0 6"></a-box>
+        <a-box color="#500" depth="1" hight="1" width="1" position="-22 0 -4"></a-box>
+
+        <a-image position="-3.99 3 -9" rotation="0 90 0" width="3" height=" 2.40716448032" src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Eug%C3%A8ne_Delacroix_-_Le_28_Juillet._La_Libert%C3%A9_guidant_le_peuple.jpg"></a-image>
+        <a-entity position="-3.5 1.25 -9" rotation="-30 90 0" geometry="primitive: plane; height: 1.25; width: 3"></a-entity>
+        <a-entity position="1 1.5 -13.5" rotation="-30 0 0" class="link" geometry="primitive: plane; height: 1; width: 1" material="shader: flat; src: #cubes-thumb" event-set__mouseenter="scale: 1.2 1.2 1" event-set__mouseleave="scale: 1 1 1" event-set__click="_target: #image-360; _delay: 300; material.src: #cubes" proxy-event="event: click; to: #image-360; as: fade" scale=""></a-entity>
+        
+        <a-entity id="camera" camera look-controls wasd-controls position="0 2 0">
+            <a-cursor
+              id="cursor"
+              animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+              animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+              event-set__mouseenter="_event: mouseenter; color: springgreen"
+              event-set__mouseleave="_event: mouseleave; color: black"
+              raycaster="objects: .link"></a-cursor>
+          </a-entity>
+    </a-scene>
+</body>
+</html>l
