@@ -18,7 +18,7 @@
             <img id="lady_liberty" src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Eug%C3%A8ne_Delacroix_-_Le_28_Juillet._La_Libert%C3%A9_guidant_le_peuple.jpg">
         </a-assests>
 
-        <a-plane height="20" width="28" position="0 0 0" color="#333" rotation="-90 0 0"></a-plane>
+        <a-plane height="20" width="28" position="-8 0 -4" color="#333" rotation="-90 0 0"></a-plane>
         
         <a-plane height="5" width="10" position="1 2.5 -14" color="#888" rotation="0 0 0"></a-plane>
         <a-plane height="5" width="28" position="-8 2.5 6" color="#888" rotation="0 180 0"></a-plane>
@@ -35,7 +35,7 @@
         <a-box color="#500" depth="1" hight="1" width="1" position="-22 0 -4"></a-box>
 
         <a-image position="-3.99 3 -9" rotation="0 90 0" width="3" height=" 2.40716448032" src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Eug%C3%A8ne_Delacroix_-_Le_28_Juillet._La_Libert%C3%A9_guidant_le_peuple.jpg"></a-image>
-        <a-entity position="-3.5 1.25 -9" rotation="-30 90 0" geometry="primitive: plane; height: 1.25; width: 3"></a-entity>
+        <a-text value="Liberty Leading the People\n Eugène Delacroix" position="-3.5 1.25 -9" rotation="-30 90 0" color="0 0 0" geometry="primitive: plane; height: 1.25; width: 3" material="shader: flat; color: #333" align="center"></a-text>
         <a-entity position="1 1.5 -13.5" rotation="-30 0 0" class="link" geometry="primitive: plane; height: 1; width: 1" material="shader: flat; src: #cubes-thumb" event-set__mouseenter="scale: 1.2 1.2 1" event-set__mouseleave="scale: 1 1 1" event-set__click="_target: #image-360; _delay: 300; material.src: #cubes" proxy-event="event: click; to: #image-360; as: fade" scale=""></a-entity>
         
         <a-entity id="camera" camera look-controls wasd-controls position="0 2 0">
