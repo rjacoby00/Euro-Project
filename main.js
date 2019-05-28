@@ -6,6 +6,10 @@ var dy = 0.0;
 var df = 0;
 var ds = 0;
 var angle = 0.0;
+
+var versailles = false;
+var sistene = false;
+
 console.log("script loaded!");
 
 document.addEventListener('keydown', (event) => {
@@ -27,6 +31,9 @@ document.addEventListener('keydown', (event) => {
         ds = -1;
     } else if (keyName == "c"){
         ds = 0;
+    } else if (keyName == "l"){
+        sistene = !sistene;
+        document.getElementById("rig").object3D.position.set(0, 2, 0);
     }
   } else {
     if(keyName == "o"){
@@ -39,6 +46,9 @@ document.addEventListener('keydown', (event) => {
         df = -0.2;
     } else if(keyName == "d"){
         ds = -1;
+    } else if(keyName == "y"){
+        sistene = !sistene;
+        document.getElementById("rig").object3D.position.set(0, 2, 0);
     }
   }
 }, false);
@@ -88,6 +98,12 @@ AFRAME.registerComponent('rotation-reader', {
             dx = Math.sin(angle - (Math.PI / 2)) * -.15;
             dy = Math.cos(angle - (Math.PI / 2)) * -.15;
         }
+    }
+
+    if(sistene){
+        dx = 0;
+        dy = 0;
+        document.getElementById("rig").object3D.position.set(30, 0, 0);
     }
 
     console.log(dy);
