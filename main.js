@@ -12,11 +12,11 @@ document.addEventListener('keydown', (event) => {
   const keyName = event.key;
   if(controller){
     if(keyName == "w"){
-        df = .2;
+        df = .15;
     } else if (keyName == "e"){
         df = 0;
     } else if(keyName == "x"){
-        df = -0.2;
+        df = -0.15;
     } else if (keyName == "z"){
         df = 0;
     } else if (keyName == "a"){
@@ -66,15 +66,28 @@ AFRAME.registerComponent('rotation-reader', {
         angle = this.el.object3D.rotation._y % (2 * Math.PI);
     }
     
-    if(ds == 0){
-        dx = Math.sin(angle) * df * -1;
-        dy = Math.cos(angle) * df * -1;
-    } else if(ds == 1){
-        dx = Math.sin(angle + (Math.PI / 2)) * -.15;
-        dy = Math.cos(angle + (Math.PI / 2)) * -.15;
-    } else if(ds == -1){
-        dx = Math.sin(angle - (Math.PI / 2)) * -.15;
-        dy = Math.cos(angle - (Math.PI / 2)) * -.15;
+    if(controller){
+        if(ds == 0){
+            dx = Math.sin(angle) * df * -1;
+            dy = Math.cos(angle) * df * -1;
+        } else if(ds == 1){
+            dx = Math.sin(angle + (Math.PI / 2)) * -.1;
+            dy = Math.cos(angle + (Math.PI / 2)) * -.1;
+        } else if(ds == -1){
+            dx = Math.sin(angle - (Math.PI / 2)) * -.1;
+            dy = Math.cos(angle - (Math.PI / 2)) * -.1;
+        }
+    } else {
+        if(ds == 0){
+            dx = Math.sin(angle) * df * -1;
+            dy = Math.cos(angle) * df * -1;
+        } else if(ds == 1){
+            dx = Math.sin(angle + (Math.PI / 2)) * -.15;
+            dy = Math.cos(angle + (Math.PI / 2)) * -.15;
+        } else if(ds == -1){
+            dx = Math.sin(angle - (Math.PI / 2)) * -.15;
+            dy = Math.cos(angle - (Math.PI / 2)) * -.15;
+        }
     }
 
     console.log(dy);
