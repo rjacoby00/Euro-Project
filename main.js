@@ -103,7 +103,7 @@ AFRAME.registerComponent('rotation-reader', {
     if(sistene){
         dx = 0;
         dy = 0;
-        document.getElementById("rig").object3D.position.set(30, -20, 0);
+        document.getElementById("rig").object3D.position.set(30, 0, 0);
     }
 
     console.log(dy);
