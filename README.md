@@ -13,3 +13,4 @@ Web page for AP Euro final project
 7. The War - Otto Dix
 8. The Starry Night - Vincent van Gogh
 9. The Emperor Napoleon in His Study at the Tuileries - Jacques-Louis David
+10. The Geographer - Johannes Vermeer
